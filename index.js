@@ -1,7 +1,7 @@
 const express = require("express");
 const cookieParser = require("cookie-parser");
 const app = express();
-const port = 8080;
+require("dotenv").config();
 
 app.get("/", (req, res) => {
   res.send("welcome");
@@ -18,7 +18,7 @@ app.use(userRoute);
 app.use(authenticate);
 app.use(productRoute);
 
-app.listen(8080, async () => {
+app.listen(process.env.port, async () => {
   try {
     await connection;
     console.log("connected to db");
