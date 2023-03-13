@@ -25,5 +25,5 @@ app.listen(process.env.port, async () => {
   } catch (error) {
     console.log(error);
   }
-  console.log("listning server at", port);
+  console.log("listning server at");
 });
